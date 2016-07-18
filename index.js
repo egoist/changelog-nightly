@@ -5,6 +5,7 @@ const fetch = require('axios')
 const cheerio = require('cheerio')
 const cash = require('koa-cash')
 const lruCache = require('lru-cache')
+const cors = require('kcors')
 
 const app = koa()
 
@@ -60,7 +61,7 @@ app.use(cash({
     cache.set(key, value)
   }
 }))
-
+app.use(cors())
 app.use(function* () {
   const url = this.req.url.substr(1)
   if (isDatePath(url)) {
