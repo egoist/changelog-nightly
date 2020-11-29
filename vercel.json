@@ -1,5 +1,7 @@
 {
   "functions": {
-    "index.js": {}
+    "index.js": {
+      "runtime": "@vercel/node"
+    }
   }
 }
